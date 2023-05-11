@@ -1,19 +1,19 @@
-var intro = "Hello Baby";
+let intro = "Hello Baby";
 document.getElementById("intro").innerHTML = intro;
 
 // function do_something() {
-//     var selectedValue = document.getElementById("mySelect").value;
+//     let selectedValue = document.getElementById("mySelect").value;
 //     alert(selectedValue);
 // }
 
-var selectedElement = document.getElementById("mySelect");
+let selectedElement = document.getElementById("mySelect");
 selectedElement.addEventListener("change", changeFunction);
 function changeFunction() {
-    var selectedValue = document.getElementById("mySelect").value;
+    let selectedValue = document.getElementById("mySelect").value;
     alert(selectedValue);
 }
 
-var mouse = document.getElementById("intro");
+let mouse = document.getElementById("intro");
 mouse.addEventListener("mouseover", mouseOver);
 mouse.addEventListener("mouseout", mouseOut);
 function mouseOver() {
@@ -23,8 +23,14 @@ function mouseOut() {
     document.getElementById("intro").style.color = "black"
 }
 
-var click = document.getElementById("intro");
+let click = document.getElementById("intro");
 click.addEventListener("click", clickFunction);
 function clickFunction() {
     alert("Love you")
+}
+
+let clickbtn = document.getElementById("btnClick");
+clickbtn.addEventListener("click", clickBtn);
+function clickBtn() {
+    alert(intro);
 }
