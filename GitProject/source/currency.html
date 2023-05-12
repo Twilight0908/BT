@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency converter</title>
+</head>
+
+<body>
+    <form action="currency.html" method="get">
+        <table style="border-collapse: collapse; border: 1px solid black; text-align: center;">
+            <tr>
+                <th>Amount</th>
+                <th>From Currency</th>
+                <th>To Currency</th>
+            </tr>
+            <tr>
+                <td><input type="text" name="" id="amount"></td>
+                <td>
+                    <select id="fromCurr">
+                        <option value="VND">VND</option>
+                        <option value="USD">USD</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="toCurr">
+                        <option value="USD">USD</option>
+                        <option value="VND">VND</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Result</td>
+                <td><input type="text" name="" id="result" disabled></td>
+                <td><button type="button" id="convert">Convert</button></td>
+            </tr>
+        </table>
+    </form>
+    <script src="/GitProject/JS/currency.js"></script>
+</body>
+
+</html>
