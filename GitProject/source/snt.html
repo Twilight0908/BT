@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>So Nguyen To</title>
+</head>
+
+<body>
+    <h1>So Nguyen To</h1>
+    <label for="">Nhap so luong so nguyen to</label>
+    <input type="text" name="" id="count">
+    <button type="button" id="check">Tim</button>
+    <p id="result"></p>
+</body>
+<script>
+    function checkSNT(number) {
+        if (number == 1) {
+            console.log("1 khong phai la so nguyen to");
+            return false;
+        } else {
+            for (let i = 2; i <= number / 2; i++) {
+                if (number % i == 0)
+                    return false;
+            }
+            return true;
+        }
+    }
+
+    let check = document.getElementById("check");
+    check.addEventListener("click", clickBtn);
+    function clickBtn() {
+        let count = parseInt(document.getElementById("count").value);
+        let dem = 1;
+        let j = 1;
+        let result = "";
+        while (dem <= count) {
+            if (!checkSNT(j)) j++;
+            else {
+                //document.writeln(j);
+                result = result + j + " ";
+                dem++;
+                j++;
+            }
+        }
+        document.getElementById("result").innerHTML = result;
+    }
+</script>
+
+</html>
