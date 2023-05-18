@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Element</title>
+    <style>
+        body {
+            padding-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text" name="" id="txtValue">
+        <button type="button" id="add">Add</button>
+        <button type="button" id="display">Display</button>
+    </div>
+    <div id="result"></div>
+</body>
+<script>
+    let i = 0;
+    let arr = [];
+    function addElement() {
+        arr[i] = document.getElementById("txtValue").value;
+        alert("Element: " + arr[i] + " Added at index " + i);
+        i++;
+        document.getElementById("txtValue").value = "";
+    }
+    function displayArr() {
+        let txt = "<hr>";
+        for (let j = 0; j < arr.length; j++) {
+            txt += "Element " + j + " = " + arr[j] + "<br>";
+        }
+        document.getElementById("result").innerHTML = txt;
+    }
+
+    let add = document.getElementById("add");
+    add.addEventListener("click", addElement);
+
+    let display = document.getElementById("display");
+    display.addEventListener("click", displayArr);
+</script>
+
+</html>
