@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse Array</title>
+</head>
+
+<body>
+    <p>Array Before</p>
+    <p id="before"></p>
+    <p>Array Reverse</p>
+    <p id="result"></p>
+</body>
+<script>
+    let arr = [1, 3, 5, 2, 5, 6, 7, 8, 0, 4];
+    let first = 0;
+    let last = arr.length - 1;
+    document.getElementById("before").innerHTML = arr;
+    while (first < last) {
+        let temp = arr[first];
+        arr[first] = arr[last];
+        arr[last] = temp;
+        first++;
+        last--;
+    }
+    document.getElementById("result").innerHTML = arr;
+</script>
+
+</html>
