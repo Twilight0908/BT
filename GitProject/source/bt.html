@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai Tap</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let myStr = "You guys try to do the exercises because doing more exercises helps us understand the theory and solve problems better";
+
+    // Sử dụng phương thức split() để tách chuỗi thành các từ và đếm số lượng từ
+    let wordCount = myStr.split(" ").length;
+
+    console.log("Số từ trong chuỗi:", wordCount);
+
+    let words = myStr.split(" ");
+
+    let longestWord = "";
+    let maxLetterCount = 0;
+
+    // Duyệt qua từng từ trong danh sách
+    for (let i = 0; i < words.length; i++) {
+        let word = words[i];
+
+        // Kiểm tra độ dài từ và cập nhật từ dài nhất
+        if (word.length > longestWord.length) {
+            longestWord = word;
+            maxLetterCount = word.length;
+        }
+    }
+
+    console.log("Từ dài nhất:", longestWord);
+    console.log("Số chữ cái trong từ dài nhất:", maxLetterCount);
+
+    let wordCounts = [];
+
+    // Đếm số lần xuất hiện của từng từ
+    for (let i = 0; i < words.length; i++) {
+        let word = words[i];
+
+        if (wordCounts[word]) {
+            wordCounts[word]++;
+        } else {
+            wordCounts[word] = 1;
+        }
+    }
+
+    // Tìm số từ xuất hiện nhiều nhất
+    let maxCount = 0;
+    let mostFrequentWord = "";
+
+    for (let word in wordCounts) {
+        if (wordCounts[word] > maxCount) {
+            maxCount = wordCounts[word];
+            mostFrequentWord = word;
+        }
+    }
+
+    console.log("Từ xuất hiện nhiều nhất:", mostFrequentWord);
+    console.log("Số lần xuất hiện:", maxCount);
+
+    let cleanedStr = myStr.replace(/[^a-zA-Z]/g, "");
+
+    let letterCounts = [];
+
+    // Đếm số lần xuất hiện của từng chữ cái
+    for (let i = 0; i < cleanedStr.length; i++) {
+        let letter = cleanedStr[i].toLowerCase();
+
+        if (letterCounts[letter]) {
+            letterCounts[letter]++;
+        } else {
+            letterCounts[letter] = 1;
+        }
+    }
+
+    // Tìm số chữ cái xuất hiện nhiều nhất
+    let maxCountl = 0;
+    let mostFrequentLetter = "";
+
+    for (let letter in letterCounts) {
+        if (letterCounts[letter] > maxCountl) {
+            maxCountl = letterCounts[letter];
+            mostFrequentLetter = letter;
+        }
+    }
+
+    console.log("Chữ cái xuất hiện nhiều nhất:", mostFrequentLetter);
+    console.log("Số lần xuất hiện:", maxCountl);
+</script>
+
+</html>
