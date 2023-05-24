@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX 11</title>
+</head>
+
+<body>
+    <div>
+        <label for="">Square Number</label>
+        <input type="number" name="" id="num1" placeholder="square number" oninput="square(this.value)"
+            onchange="square(this.value)">
+        <p><label for="" id="resultSquare"></label></p>
+    </div>
+    <hr>
+    <div>
+        <label for="">Circle</label>
+        <input type="number" name="" id="num2" placeholder="circle" oninput="circle(this.value)"
+            onchange="circle(this.value)">
+        <p><label for="" id="acreage"></label></p>
+        <p><label for="" id="perimeter"></label></p>
+    </div>
+    <hr>
+    <div>
+        <label for="">Factorial</label>
+        <input type="number" name="" id="num3" placeholder="factorial" oninput="factorial(this.value)"
+            onchange="factorial(this.value)">
+        <p><label for="" id="factorial"></label></p>
+    </div>
+    <hr>
+    <div>
+        <label for="">Check Number</label>
+        <input type="text" name="" id="num4" placeholder="check number" oninput="checkNumber(this.value)"
+            onchange="checkNumber(this.value)">
+        <p><label for="" id="checkNumber"></label></p>
+    </div>
+</body>
+<script>
+    function square(num1) {
+        num1 = parseFloat(num1);
+        document.getElementById("resultSquare").innerHTML = num1 * num1;
+    }
+
+    function circle(num2) {
+        num2 = parseFloat(num2);
+        document.getElementById("perimeter").innerHTML = "Perimeter: " + num2 * 2 * 3.14;
+        document.getElementById("acreage").innerHTML = "Acreage: " + num2 * num2 * 3.14;
+    }
+
+    function factorial(num3) {
+        num3 = parseFloat(num3);
+        let result = 1;
+        for (let i = 1; i <= num3; i++) {
+            result *= i;
+        }
+        // document.getElementById("factorial").innerHTML = "Factorial of " + num3 + " is " + result;
+        document.getElementById("factorial").innerHTML = `Factorial of ${num3} is ${result}`;
+    }
+
+    function checkNumber(num4) {
+        num4 = parseFloat(num4);
+        if (!isNaN(num4))
+            document.getElementById("checkNumber").innerHTML = "Is Number";
+        else
+            document.getElementById("checkNumber").innerHTML = "Not Number";
+    }
+</script>
+
+</html>
