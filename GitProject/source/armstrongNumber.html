@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armstrong Number</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function isArmstrongNumber(number) {
+        let digits = number.toString().split('');
+        let power = digits.length;
+        let sum = 0;
+        for (let i = 0; i < digits.length; i++) {
+            sum += Math.pow(parseInt(digits[i]), power);
+        }
+        return sum == number;
+    }
+
+    function findArmstrongNumber(start, end) {
+        let armstrongNumber = [];
+        for (let i = start; i <= end; i++) {
+            if (isArmstrongNumber(i)) {
+                armstrongNumber.push(i);
+            }
+        }
+        return armstrongNumber;
+    }
+
+    console.log(findArmstrongNumber(0, 10000));
+</script>
+
+</html>
