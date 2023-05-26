@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX 12</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // function Student(id, name, add) {
+    //     this.id = id;
+    //     this.name = name;
+    //     this.add = add;
+    //     this.getInfor = function () {
+    //         return `Id: ${id} Name: ${name} Address: ${add}`;
+    //     }
+    // }
+
+    // let student = new Student(01, "Twilight", "Ha Noi");
+    // console.log(student.getInfor());
+
+    let student = {
+        id: 01,
+        name: "Twilight",
+        add: "Ha Noi",
+        getInfor: function () {
+            return `Id: ${this.id} Name: ${this.name} Address: ${this.add}`;
+        }
+    };
+    console.log(student.name);
+    console.log(student.getInfor());
+
+    // Su Dung object literals
+
+    let person = {
+        name: ['Bob', 'Smith'],
+        age: 32,
+        gender: 'male',
+        interests: ['music', 'skiing'],
+
+        bio: function () {
+            console.log(this.name[0] + ' ' + this.name[1] + ' is ' + this.age + ' years old. He likes ' + this.interests[0] + ' and ' + this.interests[1] + '.');
+        },
+        greeting: function () {
+            console.log('Hi! I\'m ' + this.name[0] + '.');
+        }
+    };
+    person.bio();
+    person.greeting();
+
+    // Su Dung Ham
+
+    function Apple(type) {
+        this.type = type;
+        this.color = "red";
+        this.getInfor = function () {
+            return `Color ${this.color} type ${this.type} apple`;
+        };
+    }
+    Apple.prototype.getType = function () {
+        return `Apple type is ${this.type}`;
+    };
+
+    let apple = new Apple("macintosh");
+    console.log(apple.getInfor());
+    console.log(apple.getType());
+
+    // Singleton
+
+    let Banana = new function () {
+        this.type = "Asia";
+        this.color = "yellow";
+        this.getInfor = function () {
+            return `Color ${this.color} type ${this.type} banana`;
+        };
+    }
+    console.log(Banana.getInfor());
+</script>
+
+</html>
