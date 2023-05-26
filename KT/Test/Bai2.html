@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai 2</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function tryRemoveFromArray(arr, index) {
+        let arrNew = [];
+        for (let i = 0; i < arr.length; i++) {
+            if (i != index) {
+                arrNew[arrNew.length] = arr[i];
+            }
+        }
+        return arrNew;
+    }
+
+    let arr = [0, 9, 1, 8, 2, 7, 3, 6, 4, 5];
+    let index = prompt("Nhap vao index ban muon loai bo");
+    document.write(tryRemoveFromArray(arr, index));
+</script>
+
+</html>
