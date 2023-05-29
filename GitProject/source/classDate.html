@@ -36,6 +36,14 @@
         this.setYear = function (year) {
             this.year = year;
         }
+        this.setDate = function (day, month, year) {
+            this.day = day;
+            this.month = month;
+            this.year = year;
+        }
+        this.toString = function () {
+            return `${this.day}/${this.month}/${this.year}`;
+        }
     }
 
     let date = new MyDate(25, 5, 2023);
@@ -45,6 +53,28 @@
     date.setMonth(1);
     date.setYear(2024);
     console.log(`${date.getDay()}/${date.getMonth()}/${date.getYear()}`);
+
+    date.setDate(26, 05, 2023);
+    console.log(date.toString());
+
+
+    function Circle(radius) {
+        this.radius = radius;
+
+        this.setRadius = function (radius) {
+            this.radius = radius;
+        }
+        this.getRadius = function () {
+            return this.radius;
+        }
+        this.getArea = function () {
+            return Math.PI * this.radius ** 2;
+        }
+    }
+
+    let circle = new Circle(2);
+    console.log(`Radius: ${circle.getRadius()} Area: ${circle.getArea()}`);
+    console.log(`Radius: ${circle.radius} Area: ${circle.getArea()}`);
 
 </script>
 
