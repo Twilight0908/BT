@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HCN</title>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="1280px" height="720px" style="border: 1px solid #d3d3d3;"></canvas>
+</body>
+<script>
+    class Rectangle {
+        width;
+        height;
+        constructor(width, height) {
+            this.width = width;
+            this.height = height;
+        }
+
+        getWidth() {
+            return this.width;
+        }
+        getHeight() {
+            return this.height;
+        }
+        setWidth(width) {
+            this.width = width;
+        }
+        setHeight(height) {
+            this.height = height;
+        }
+
+        getArea() {
+            return this.width * this.height;
+        }
+        getPerimeter() {
+            return (this.width + this.height) * 2;
+        }
+    }
+
+    function createRectangle() {
+        let ctx = document.getElementById("myCanvas").getContext("2d");
+        ctx.fillStyle = "red";
+        ctx.fillRect(10, 10, 200, 50);
+    }
+
+    createRectangle();
+</script>
+
+</html>
