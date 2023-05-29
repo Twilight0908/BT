@@ -8,6 +8,10 @@
     <title>Product Manager</title>
 </head>
 <style>
+    body {
+        padding: auto;
+    }
+
     button {
         background-color: greenyellow;
     }
@@ -22,15 +26,20 @@
     th,
     td {
         border: 1px solid black;
+        width: auto;
+        height: auto;
     }
 </style>
 
 <body>
-    <h2>Add Product</h2>
     <div>
+        <h2>Add Product</h2>
         <input type="text" name="" id="name" placeholder="add new product">
-        <button type="button" onclick="add()">ADD</button>
+        <button type="button" onclick="add()">Save</button>
     </div>
+
+    <div id="form-edit"></div>
+
     <div>
         <h2>List Product</h2>
         <table>
@@ -42,17 +51,66 @@
         </table>
     </div>
 </body>
+
 <script>
-    let listProducts = [];
+    let listProducts = ["Apple", "SamSung"];
+    let flag = -1;
+    display();
 
     function add() {
-        let name = document.getElementById("name").value;
-        listProducts.push(name);
-        display();
+        if (flag == -1) {
+            let name = document.getElementById("name").value;
+            listProducts.push(name);
+            display();
+        } else {
+            edit(flag);
+            flag = -1;
+        }
     }
 
     function display() {
+        let html = '';
+        for (let i = 0; i < listProducts.length; i++) {
+            html += `
+            <tr>
+                <td>${listProducts[i]}</td>
+                <td><button type="button" onclick="showFormEdit(${i})">Edit</button></td>
+                <td><button type="button" onclick="deleteProduct(${i})">Delete</button></td>
+            </tr>`;
+        }
+        document.getElementById("list").innerHTML = html;
+        document.getElementById("name").value = "";
+    }
 
+    function deleteProduct(index) {
+        listProducts.splice(index, 1);
+        display();
+    }
+
+    function showFormEdit(index) {
+        // document.getElementById("form-edit").innerHTML = `
+        // <h3>Form Edit</h3>
+        // <input type="text" placeholder="Edit product" id="name-edit">
+        // <button type="button" onclick="edit(${index})">Save</button>
+        // `;
+
+        // let name = listProducts[index];
+        // document.getElementById("name-edit").value = name;
+
+        flag = index;
+        document.getElementById("name").value = listProducts[index];
+    }
+
+    function edit(index) {
+        // let nameEdit = document.getElementById("name-edit").value;
+        // listProducts[index] = nameEdit;
+        // document.getElementById("form-edit").innerHTML = "";
+        // display();
+
+        let name = document.getElementById("name").value;
+        listProducts[index] = name;
+        document.getElementById("name").value = "";
+        display();
     }
 </script>
 
